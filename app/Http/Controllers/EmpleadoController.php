@@ -9,7 +9,8 @@ class EmpleadoController extends Controller
 {
     public function index()
     {
-        return view('empleados.index');
+        $datos['empleados']=Empleado::paginate();
+        return view('empleados.index', $datos);
     }
 
     public function create()
