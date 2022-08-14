@@ -7,12 +7,14 @@ use Illuminate\Http\Request;
 
 class EmpleadoController extends Controller
 {
+    /* Metodo para listar registros */
     public function index()
     {
         $datos['empleados']=Empleado::paginate();
         return view('empleados.index', $datos);
     }
 
+    /* Metodo para crear registros */
     public function create()
     {
         return view('empleados.create');
@@ -24,5 +26,12 @@ class EmpleadoController extends Controller
         /* Insertar datos en el modelo */
         Empleado::insert($datosEmpleados);
         return response()->json($datosEmpleados);
+    }
+
+    /* Metodo para eliminar registros */
+    public function destroy($id)
+    {
+        Empleado::destroy($id);
+        return redirect('empleados');
     }
 }

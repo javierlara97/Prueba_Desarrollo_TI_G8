@@ -22,7 +22,13 @@
             <td>{{ $empleado->edad }}</td>
             <td>{{ $empleado->cargo }}</td>
             <td>{{ $empleado->nocelular }}</td>
-            <td>Editar | Borrar</td>
+            <td>Editar | 
+                <form action="{{ url('/empleados/'.$empleado->id) }}" method="post">
+                    @csrf
+                    {{  method_field('DELETE') }}
+                    <input type="submit" onclick="return confirm('¿Segur de borrar?')" value="Borrar">
+                </form>
+            </td>
         </tr>
         @endforeach
     </tbody>
