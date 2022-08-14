@@ -1,1 +1,1 @@
-EDIT
+@include('empleados.form')

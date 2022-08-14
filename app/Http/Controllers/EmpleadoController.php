@@ -20,6 +20,12 @@ class EmpleadoController extends Controller
         return view('empleados.create');
     }
 
+    public function edit($id)
+    {
+        $empleado=Empleado::findOrFail($id);
+        return view('empleados.edit', compact('empleado'));
+    }
+
     public function store(Request $request)
     {
         $datosEmpleados = request()->except('_token');

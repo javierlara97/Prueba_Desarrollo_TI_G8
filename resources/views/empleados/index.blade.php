@@ -13,6 +13,7 @@
     </thead>
 
     <tbody>
+        <!-- Obtener los datos de la BD y listarlos -->
         @foreach($empleados as $empleado)
         <tr>
             <td>{{ $empleado->id }}</td>
@@ -22,7 +23,9 @@
             <td>{{ $empleado->edad }}</td>
             <td>{{ $empleado->cargo }}</td>
             <td>{{ $empleado->nocelular }}</td>
-            <td>Editar | 
+            <td>
+                <a href="{{ url('/empleados/'.$empleado->id.'/edit') }}">Editar</a>
+                |
                 <form action="{{ url('/empleados/'.$empleado->id) }}" method="post">
                     @csrf
                     {{  method_field('DELETE') }}
