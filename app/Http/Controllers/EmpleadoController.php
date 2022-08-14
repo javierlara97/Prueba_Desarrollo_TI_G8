@@ -31,14 +31,14 @@ class EmpleadoController extends Controller
         $datosEmpleados = request()->except('_token');
         /* Insertar datos en el modelo */
         Empleado::insert($datosEmpleados);
-        return response()->json($datosEmpleados);
+        return redirect('empleados')->with('mensaje', 'Empleado agregado con éxito');
     }
 
     /* Metodo para eliminar registros */
     public function destroy($id)
     {
         Empleado::destroy($id);
-        return redirect('empleados');
+        return redirect('empleados')->with('mensaje', 'Empleado borrado con éxito');
     }
 
     /* Metodo para actualizar registros */
