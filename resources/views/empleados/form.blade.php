@@ -6,3 +6,6 @@
 <input type="number" name="nocelular" value="{{ $empleado->nocelular }}" placeholder="Nro Celular"></input>
 
 <input type="submit" value="Guardar"></input>
+
+
+

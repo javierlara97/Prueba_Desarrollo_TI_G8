@@ -21,6 +21,7 @@ class CreateEmpleadosTable extends Migration
             $table->integer('edad');
             $table->string('cargo', 65);
             $table->integer('nocelular');
+            $table->timestamps();
             
         });
     }

@@ -40,4 +40,14 @@ class EmpleadoController extends Controller
         Empleado::destroy($id);
         return redirect('empleados');
     }
+
+    /* Metodo para actualizar registros */
+    public function update(Request $request, $id)
+    {
+        $datosEmpleados = request()->except(['_token', '_method']);
+        Empleado::where('id','=',$id)->update($datosEmpleados);
+
+        $empleado=Empleado::findOrFail($id);
+        return view('empleados.edit', compact('empleado'));
+    }
 }
