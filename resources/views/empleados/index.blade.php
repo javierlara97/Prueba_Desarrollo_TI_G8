@@ -1,3 +1,7 @@
+
+@extends('layouts.app')
+@section('content')
+<div class="container">
 <a href="{{ url('empleados/create') }}">Registrar nuevo empleado</a>
 @if(Session::has('mensaje'))
     {{ Session::get('mensaje') }}
@@ -41,3 +45,6 @@
         @endforeach
     </tbody>
 </table> 
+
+</div>
+@endsection
