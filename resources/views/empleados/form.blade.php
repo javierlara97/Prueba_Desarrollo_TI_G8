@@ -1,3 +1,4 @@
+<h1> {{ $modo }} Empleado</h1>
 <input type="number" name="cedula" value="{{ 
     isset($empleado->cedula)?$empleado->cedula:'' 
 }}" placeholder="Número de Cedula"></input>
@@ -17,7 +18,7 @@
     isset($empleado->nocelular)?$empleado->nocelular:'' 
  }}" placeholder="Nro Celular"></input>
 
-<input type="submit" value="Guardar"></input>
+<input type="submit" value="{{ $modo }} datos"></input>
 
 <a href="{{ url('empleados/') }}">Regresar</a>
 
